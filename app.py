@@ -39,6 +39,7 @@ def predict(url: str):
     prediction = get_prediction(url, clf)
     print("Predicted Probability : ", prediction)
     
+    prediction = int(prediction)
     
     # i = prediction[0][0] * 100
     # i = round(i, 3)
