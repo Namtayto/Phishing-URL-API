@@ -40,9 +40,9 @@ def predict(url: str):
     print("Predicted Probability : ", prediction)
     
     
-    i = prediction[0][0] * 100
-    i = round(i, 3)
-    print("Predicted % : ", i)
+    # i = prediction[0][0] * 100
+    # i = round(i, 3)
+    # print("Predicted % : ", i)
     
     # always return the output as dictionary/json.
     prediction = {"prediction": prediction}
