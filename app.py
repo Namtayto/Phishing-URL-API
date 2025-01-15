@@ -33,18 +33,17 @@ with open('lightgbm_classifier.pkl', 'rb') as file:
 
 
 @app.post("/predict")
-def predict(data: UrlData):
-
-    # convert to dictionary
-    data = data.dict()
-
-    # the key has same name as you put in class
-    url = data["url"]
+def predict(url: str):
 
     # predict price using ML model
     prediction = get_prediction(url, clf)
     print("Predicted Probability : ", prediction)
-
+    
+    
+    i = prediction[0][0] * 100
+    i = round(i, 3)
+    print("Predicted % : ", i)
+    
     # always return the output as dictionary/json.
     prediction = {"prediction": prediction}
 
