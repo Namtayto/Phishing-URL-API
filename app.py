@@ -51,27 +51,27 @@ def predict(url: str):
     return prediction
 
 
-@app.post("/get_typesquatted_urls")
-def get_similar_urls(data: DomainData):
+# @app.post("/get_typesquatted_urls")
+# def get_similar_urls(data: DomainData):
 
-    # convert to dictionary
-    data = data.dict()
+#     # convert to dictionary
+#     data = data.dict()
 
-    # the key has same name as you put in class
-    url = data["url"]
-    max_num = data["max_num"]
+#     # the key has same name as you put in class
+#     url = data["url"]
+#     max_num = data["max_num"]
 
-    if (max_num <= 0):
-        max_num = 20
+#     if (max_num <= 0):
+#         max_num = 20
 
-    # result
-    output = getTypoSquattedDomains(url, max_num)
-    print("API OUTPUT : ", output)
-    output = {"output": output}
+#     # result
+#     output = getTypoSquattedDomains(url, max_num)
+#     print("API OUTPUT : ", output)
+#     output = {"output": output}
 
-    # Convert the output dictionary to JSON-compatible format
-    output_dict = json.loads(json.dumps(output, default=str))
-    return output_dict
+#     # Convert the output dictionary to JSON-compatible format
+#     output_dict = json.loads(json.dumps(output, default=str))
+#     return output_dict
 
 
 
